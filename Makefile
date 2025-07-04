@@ -2,6 +2,8 @@ TF_PLAN :=../tfplan/tfplan
 TF_VARS :=../tfvars/terraform.tfvars
 
 tf-init:
+	terraform -chdir=terraform init
+tf-init-upgrade:
 	terraform -chdir=terraform init -upgrade
 tf-plan:
 	terraform -chdir=terraform plan -var-file=$(TF_VARS) -out=$(TF_PLAN)
